@@ -1,0 +1,59 @@
+ALGORITHM verife
+VAR
+    test:BOOLEAN;
+    nbc,nbm,nbv: INTEGER;
+    ch,chv: CHAR;
+BEGIN
+    Read(ch)
+    nbc:=0
+    nbm:=1
+    nbv:=0
+    test:=vrai
+    chv:= 'aeiouAEIOUàâäéèêëîïôöùûüÀÂÄÉÈÊËÎÏÔÖÙÛÜ'
+    FOR i FROM 0 TO length(ch)  DO
+        WHILE (test<>faux ou i>=lenght(ch)) DO
+            IF (ch[i]<"a" et ch[i]>"z" ou ch[i]<"A" et ch[i]>"Z" ) THEN
+                test=faux
+            ELSE_IF (ch[i]>="a" et ch[i]<="z" ou ch[i]>="A" et ch[i]<="Z" ) THEN
+                nbc=nbc+1
+            ELSE_IF (ch[length(ch)]<>".") THEN
+                test=faux
+            ELSE_IF(ch[i]=" ")THEN
+                nbm=nbm+1
+            ELSE 
+                FOR j FROM 0 TO length(chv) STEP step  DO
+                    IF (ch[i]=chv[j]) THEN
+                        nbv=nbv+1          
+                    END_IF
+                END_FOR
+            END_IF  
+        END_WHILE
+    END_FOR
+    wreat("La longueur de la phrase ",nbc)
+    wreat("Le nombre de mots dans la phrase",nbm)
+    wreat("Le nombre de voyelles dans la phrase",nbv)
+END
+
+
+
+ALGORITHM verife
+VAR
+    test:BOOLEAN;
+    nbc,nbm,nbv: INTEGER;
+    ch,chv: CHAR;
+BEGIN
+    Read(ch)
+    nbc:=0
+    nbm:=1
+    nbv:=0
+FOR i FROM 0 TO length(ch)  DO
+    if(ch[i]in ['aeiouAEIOUàâäéèêëîïôöùûüÀÂÄÉÈÊËÎÏÔÖÙÛÜ'])THEN
+        nbv=nbv++
+    
+    else if(ch[i]==" ")THEN
+        nbm=nbm+1
+
+write("La longueur de la phrase.",ch.length());
+write("Le nombre de mots dans la phrase",nbm)
+write("Le nombre de voyelles dans la phrase",nbv)
+END

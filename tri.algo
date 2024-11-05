@@ -1,0 +1,27 @@
+ALGORITHM trieg
+VAR
+    i,n,aux:INTEGER;
+    test:BOOLEAN;
+BEGIN
+    Read(n)
+    FOR i FROM 0 TO n-1 STEP 1 DO
+        tab[i]:=Read("donne nb")
+    END_FOR
+    WHILE (i<n et test<>faux) DO
+        FOR i FROM 1 TO n-1 DO
+            FOR j FROM 0 TO i DO 
+                IF (tab[i]>tab[j]) THEN
+                    aux:=tab[i]
+                    tab[i]:=tab[j]
+                    tab[j]:=aux
+                    test:=faux
+            ELSE 
+                test:=vrai
+            END_IF
+        END_FOR
+        END_FOR
+    END_WHILE
+    FOR i FROM 0 TO n-1 DO
+        whirt(tab[i])
+    END_FOR
+END
